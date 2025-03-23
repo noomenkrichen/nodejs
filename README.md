@@ -23,7 +23,7 @@ In this case the file downloaded is version 22.14.0 of nodejs
 sudo tar -xvf node-v22.14.0-linux-x64.tar.xz
 ```
 
-#### Step 6: Copy extracted files under /usr/ directory
+#### Step 6: Copy extracted files under /usr/ directory using the following command
 ```bash
 sudo cp -r node-v22.14.0-linux-x64/{bin,include,lib,share} /usr/
 ```
@@ -31,6 +31,11 @@ sudo cp -r node-v22.14.0-linux-x64/{bin,include,lib,share} /usr/
 #### Step 7: Check the node version
 ```bash
 node --version
+```
+
+#### Step 7: Check npm version
+```bash
+npm --version
 ```
 
 Result In my case -> v22.14.0
