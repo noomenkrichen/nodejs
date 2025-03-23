@@ -18,6 +18,7 @@ sudo apt install xz-utils
 ```
 
 #### Step 5: Extract the .tar.xz file using the following command
+In this case the file downloaded is version 22.14.0 of nodejs
 ```bash
 sudo tar -xvf node-v22.14.0-linux-x64.tar.xz
 ```
