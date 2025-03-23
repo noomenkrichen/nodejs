@@ -16,7 +16,7 @@ network:
         - to: default
           via: 192.168.1.1  # Your router's IP
       nameservers:
-        addresses: addresses: [1.1.1.1, 8.8.8.8, 8.8.4.4]
+        addresses: [1.1.1.1, 8.8.8.8, 8.8.4.4]
 ```
 3. Apply the New Configuration
 Save the file (CTRL + X, then Y, then ENTER), then apply the changes:
