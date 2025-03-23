@@ -9,7 +9,7 @@ network:
   version: 2
   ethernets:
     eth0:  # Replace with your actual network interface name
-      dhcp4: no
+      dhcp4: false
       addresses:
         - 192.168.1.100/24  # Your static IP address
       routes:
