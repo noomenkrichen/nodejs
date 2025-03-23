@@ -1,8 +1,8 @@
 ### Steps to download and install nodejs in ubuntu
-How to install latest NodeJS v16.14.2 LTS on the latest Ubuntu 22.04 LTS using the node-v16.14.2-linux-x64.tar.xz downloaded file.
+How to install latest NodeJS version on Linux Ubuntu Desktop or Sserver using the .tar.xz downloaded file.
 
 #### Step 1: Download latest or recommended node .tar.xz file from [Node JS official website](https://nodejs.org/en/download)
-As of now, the latest stable and LTS version file is: node-v16.14.2-linux-x64.tar.xz
+Make sure you select Linux frpm the drop down menu.
 
 #### Step 2: Go to the directory in which (.tar.xz file) is downloaded.
 It should be the /Download directory
@@ -19,12 +19,12 @@ sudo apt install xz-utils
 
 #### Step 5: Extract the .tar.xz file using the following command
 ```bash
-sudo tar -xvf node-v16.14.2-linux-x64.tar.xz
+sudo tar -xvf node-v22.14.0-linux-x64.tar.xz
 ```
 
 #### Step 6: Copy files to the files to /usr/ directory
 ```bash
-sudo cp -r node-v16.14.2-linux-x64/{bin,include,lib,share} /usr/
+sudo cp -r node-v22.14.0-linux-x64/{bin,include,lib,share} /usr/
 ```
 
 #### Step 7: Check the node version
@@ -32,4 +32,4 @@ sudo cp -r node-v16.14.2-linux-x64/{bin,include,lib,share} /usr/
 node --version
 ```
 
-Result In my case -> v16.14.2
+Result In my case -> v22.14.0
