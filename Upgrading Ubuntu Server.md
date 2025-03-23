@@ -1,6 +1,6 @@
 ## Check current OS version:
 ```bash
-cat/etc/os-release
+cat /etc/os-release
 ````
 or
 ```bash
