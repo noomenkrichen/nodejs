@@ -1,7 +1,7 @@
 ### Steps to download and install nodejs in ubuntu
 How to install latest NodeJS v16.14.2 LTS on the latest Ubuntu 22.04 LTS using the node-v16.14.2-linux-x64.tar.xz downloaded file.
 
-#### Step 1: Download latest or recommended node .tar.xz file from https://nodejs.org/en/download
+#### Step 1: Download latest or recommended node .tar.xz file from [Node JS official website](https://nodejs.org/en/download)
 As of now, the latest stable and LTS version file is: node-v16.14.2-linux-x64.tar.xz
 
 #### Step 2: Go to the directory in which (.tar.xz file) is downloaded.
