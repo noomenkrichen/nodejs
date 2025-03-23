@@ -2,7 +2,7 @@
 How to install latest NodeJS version on Linux Ubuntu Desktop or Server using the .tar.xz downloaded file.
 
 #### Step 1: Download latest or recommended node .tar.xz file from [Node JS official website](https://nodejs.org/en/download)
-Make sure you select Linux frpm the drop down menu.
+Make sure you select Linux from the drop down menu.
 
 #### Step 2: Go to the directory in which (.tar.xz file) is downloaded.
 It should be the /Download directory
