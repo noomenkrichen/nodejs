@@ -1,9 +1,5 @@
 ## Check current OS version:
 ```bash
-lsb_release –a
-```
-or
-```bash
 cat/etc/os-release
 ````
 or
@@ -13,6 +9,10 @@ cat /proc/version
 or
 ```bash
 hostnamectl
+```
+or
+```bash
+lsb_release –a
 ```
 or
 ```bash
