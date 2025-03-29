@@ -21,7 +21,8 @@ sudo apt upgrade -y
 ```
 ### 1.3 Install Node.js and npm (if not pre-installed)
 To get the latest version of Node.js Follow this Guide: [click here](https://nodejs.org/en)
-` 
+
+
 The following command will install version 22.x of Node.js
 ```bash
 curl -fsSL https://deb.nodesource.com/setup_22.x | sudo bash -
