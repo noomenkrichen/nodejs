@@ -13,25 +13,25 @@
 Log in to Your VPS in Terminal 
 
 ```bash
- ssh root@your_vps_ip
+ssh root@your_vps_ip
 ```
 
 Update and Upgrade Your System
 
 ```bash
-  sudo apt update
+sudo apt update
 ```
 ```bash
-  sudo apt upgrade -y
+sudo apt upgrade -y
 ```
 
 Install Node.js and npm ( if not pre-installed)
 
 ```bash
-  curl -fsSL https://deb.nodesource.com/setup_22.x | sudo bash -
+curl -fsSL https://deb.nodesource.com/setup_22.x | sudo bash -
 ```
 ```bash
-  sudo apt-get install -y nodejs
+sudo apt-get install -y nodejs
 ```
 
 Install latest version of Git 
@@ -41,10 +41,10 @@ Follow this Guide: [click here](https://git-scm.com/downloads/linux)
 add-apt-repository ppa:git-core/ppa
 ```
 ```bash
-  sudo apt update
+sudo apt update
 ```
 ```bash
-  sudo apt install -y git
+sudo apt install -y git
 ```
 
 ###  2. Setting Up the MongoDB Database
@@ -57,33 +57,33 @@ If you want to setup MongoDB on VPS Follow this Guide: [click here](https://www.
 Clone Your Backend Repository
 
 ```bash
- mkdir /var/www
+mkdir /var/www
 ```
 ```bash
- cd /var/www
+cd /var/www
 ```
 ```bash
- mkdir app_name
+mkdir app_name
 ```
 ```bash
- cd app_name
+cd app_name
 ```
 ```bash
- git clone https://github.com/yourusername/server.git
+git clone https://github.com/yourusername/server.git
 ```
 ```bash
- cd server
+cd server
 ```
 
 Install Dependencies
 
 ```bash
- npm install
+npm install
 ```
 Create .env file & configure Environment Variables
 
 ```bash
- nano .env
+nano .env
 ```
 
 add environment variables then save and exit (Ctrl + X, then Y and Enter).
@@ -92,33 +92,33 @@ add environment variables then save and exit (Ctrl + X, then Y and Enter).
 Installing pm2 to Start Backend
 
 ```bash
- npm install -g pm2
+npm install -g pm2
 ```
 ```bash
- pm2 start server.js --name project-backend
+pm2 start server.js --name project-backend
 ```
 Start app_name-api on startup
 ```bash
- pm2 startup
+pm2 startup
 ```
 ```bash
- pm2 save
+pm2 save
 ```
 
 Allowing backend port in firewall 
 ```bash
- sudo ufw status
+sudo ufw status
 ```
 
 If firewall is disable then enable it using 
 ```bash
- sudo ufw enable
+sudo ufw enable
 ```
 ```bash
- sudo ufw allow 'OpenSSH'
+sudo ufw allow 'OpenSSH'
 ```
 ```bash
- sudo ufw allow 4000
+sudo ufw allow 4000
 ```
 
 ### 4. Deploying the React Frontends
@@ -128,25 +128,25 @@ Clone your frontend repository
 cd ..
 ```
 ```bash
- git clone https://github.com/yourusername/client.git
+git clone https://github.com/yourusername/client.git
 ```
 
 Creating Build of React Applications
 ```bash
- cd client
+cd client
 ```
 ```bash
- npm install
+npm install
 ```
 If you have ".env" file in your project
 
 Create .env file and paste the variables
 ```bash
- nano .env
+nano .env
 ```
 Create build of project
 ```bash
- npm run build
+npm run build
 ```
 
 Repeat for the second or mulitiple React app.
@@ -154,16 +154,16 @@ Repeat for the second or mulitiple React app.
 Install Nginx
 
 ```bash
- sudo apt install -y nginx
+sudo apt install -y nginx
 ```
 
 adding Nginx in firewall
 
 ```bash
- sudo ufw status
+sudo ufw status
 ```
 ```bash
- sudo ufw allow 'Nginx Full'
+sudo ufw allow 'Nginx Full'
 ```
 
 
@@ -171,11 +171,11 @@ Configure Nginx for React Frontends
 
 
 ```bash
- nano /etc/nginx/sites-available/yourdomain1.com.conf
+nano /etc/nginx/sites-available/yourdomain1.com.conf
 ```
 
 ```bash
- server {
+server {
     listen 80;
     server_name yourdomain1.com www.yourdomain1.com;
 
@@ -190,7 +190,7 @@ Save and exit (Ctrl + X, then Y and Enter).
 Create a similar file for the second or multiple React app.
 
 ```bash
- nano /etc/nginx/sites-available/yourdomain2.com.conf
+nano /etc/nginx/sites-available/yourdomain2.com.conf
 ```
 
 ```bash
