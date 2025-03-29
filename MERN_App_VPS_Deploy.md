@@ -1,12 +1,10 @@
 # Deploying MERN Stack Project on Hostinger VPS
-
 - Preparing the VPS Environment
 - Setting Up the MongoDB Database
 - Deploying the Express and Node.js Backend
 - Deploying the React Frontends
 - Configuring Nginx as a Reverse Proxy
 - Setting Up SSL Certificates
-
 ## 1. Preparing the VPS Environment
 ### 1.1 Log in to Your VPS in Terminal 
 ```bash
@@ -30,8 +28,8 @@ curl -fsSL https://deb.nodesource.com/setup_22.x | sudo bash -
 ```bash
 sudo apt-get install -y nodejs
 ```
-#### Install Latest version of Git (if not pre-installed)
-#### You can follow this Guide from Git website: [click here](https://git-scm.com/downloads/linux)
+### 1.4 Install Latest version of Git (if not pre-installed)
+You can follow this Guide from Git website: [click here](https://git-scm.com/downloads/linux)
 ```bash
 add-apt-repository ppa:git-core/ppa
 ```
@@ -41,11 +39,10 @@ sudo apt update
 ```bash
 sudo apt install -y git
 ```
-###  2. Setting Up the MongoDB Database
+##  2. Setting Up the MongoDB Database
 If you want to setup MongoDB on VPS Follow this Guide: [click here](https://www.mongodb.com/docs/manual/tutorial/install-mongodb-on-ubuntu/)
-
-### 3. Deploying the Express and Node.js Backend
-#### Clone Your Backend Repository
+## 3. Deploying the Express and Node.js Backend
+### 3.1 Clone Your Backend Repository
 ```bash
 mkdir /var/www
 ```
@@ -64,32 +61,30 @@ git clone https://github.com/yourusername/server.git
 ```bash
 cd server
 ```
-#### Install Dependencies
+### 3.2 Install Dependencies
 ```bash
 npm install
 ```
-#### Create .env file & configure Environment Variables
+### 3.3 Create .env file & configure Environment Variables
 ```bash
 nano .env
 ```
 add environment variables then save and exit (Ctrl + X, then Y and Enter).
-
-#### Installing pm2 to Start Backend
+### 3.4 Installing pm2 to Start Backend
 ```bash
 npm install -g pm2
 ```
 ```bash
 pm2 start server.js --name app_name-api
 ```
-#### Start app_name-api on startup
+### 3.5 Start app_name-api on startup
 ```bash
 pm2 startup
 ```
 ```bash
 pm2 save
 ```
-
-#### Allowing backend port in firewall 
+### 3.6 Allowing backend port in firewall 
 ```bash
 sudo ufw status
 ```
@@ -103,34 +98,32 @@ sudo ufw allow 'OpenSSH'
 ```bash
 sudo ufw allow 4000
 ```
-
-### 4. Deploying the React Frontends
-#### Clone your frontend repository
+## 4. Deploying the React Frontends
+### 4.1 Clone your frontend repository
 ```bash
 cd ..
 ```
 ```bash
 git clone https://github.com/yourusername/client.git
 ```
-#### Creating Build of React Applications
+### 4.2 Creating Build of React Applications
 ```bash
 cd client
 ```
 ```bash
 npm install
 ```
-#### If you have ".env" file in your project
+### 4.3 If you have ".env" file in your project
 Create .env file and paste the variables
 ```bash
 nano .env
 ```
-#### Create build of project
+### 4.4 Create build of project
 ```bash
 npm run build
 ```
 Repeat for the second or mulitiple React app.
-
-#### Install Nginx
+### 4.5 Install Nginx
 ```bash
 sudo apt install -y nginx
 ```
@@ -141,8 +134,7 @@ sudo ufw status
 ```bash
 sudo ufw allow 'Nginx Full'
 ```
-
-#### Configure Nginx for React Frontends
+### 4.6 Configure Nginx for React Frontends
 ```bash
 nano /etc/nginx/sites-available/yourdomain1.com.conf
 ```
@@ -158,8 +150,7 @@ server {
 }
 ```
 Save and exit (Ctrl + X, then Y and Enter).
-
-#### Create a similar file for the second or multiple React app.
+### 4.6 Create a similar file for the second or multiple React app.
 ```bash
 nano /etc/nginx/sites-available/yourdomain2.com.conf
 ```
@@ -174,25 +165,22 @@ server {
     }
 }
 ```
-
-#### Create symbolic links to enable the sites.
+### 4.7 Create symbolic links to enable the sites.
 ```bash
 ln -s /etc/nginx/sites-available/yourdomain1.com.conf /etc/nginx/sites-enabled/
 ```
 ```bash
 ln -s /etc/nginx/sites-available/yourdomain2.com.conf /etc/nginx/sites-enabled/
 ```
-
-#### Test the Nginx configuration for syntax errors.
+### 4.8 Test the Nginx configuration for syntax errors.
 ```bash
 nginx -t
 ```
 ```bash
 systemctl restart nginx
 ```
-
-### 5. Configuring Nginx as a Reverse Proxy for the backend
-#### Update Backend Nginx Configuration
+## 5. Configuring Nginx as a Reverse Proxy for the backend
+### 5.1 Update Backend Nginx Configuration
 ```bash
 nano /etc/nginx/sites-available/api.yourdomain.com.conf
 ```
@@ -210,31 +198,29 @@ server {
     }
 }
 ```
-
-#### Create symbolic links to enable the sites.
+### 5.2 Create symbolic links to enable the sites.
 ```bash
 ln -s /etc/nginx/sites-available/api.yourdomain.com.conf /etc/nginx/sites-enabled/
 ```
-
-#### Restart nginx
+### 5.3 Restart nginx
 ```bash
 systemctl restart nginx
 ```
-
-### Connect Domain Name with Website
+### 5.4 Connect Domain Name with Website
 Point all your domain & sub-domain on VPS IP address by adding DNS records in your domain manager 
-Now your website will be live on domain name
 
-### 6. Setting Up SSL Certificates 
-#### Install Certbot
+
+Now your website will be live on domain name
+## 6. Setting Up SSL Certificates 
+### 6.1 Install Certbot
 ```bash
 sudo apt install -y certbot python3-certbot-nginx
 ```
-#### Obtain SSL Certificates
+### 6.2 Obtain SSL Certificates
 ```bash
 certbot --nginx -d yourdomain1.com -d www.yourdomain1.com -d yourdomain2.com -d api.yourdomain.com
 ```
-#### Verify Auto-Renewal
+### 6.3 Verify Auto-Renewal
 ```bash
 certbot renew --dry-run
 ```
