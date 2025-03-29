@@ -106,7 +106,7 @@ cd ..
 ```bash
 git clone https://github.com/yourusername/client.git
 ```
-### 4.2 Creating Build of React Applications
+### 4.2 Install Dependencies
 ```bash
 cd client
 ```
