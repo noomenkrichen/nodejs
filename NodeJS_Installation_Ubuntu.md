@@ -1,41 +1,39 @@
-### Steps to download and install nodejs in ubuntu
+# Steps to download and install nodejs in ubuntu
 How to install latest NodeJS version on Linux Ubuntu Desktop or Server using the .tar.xz downloaded file.
-
-#### Step 1: Download latest or recommended node .tar.xz file from [Node JS official website](https://nodejs.org/en/download)
+## 1. Download latest or recommended node .tar.xz file from [Node JS official website](https://nodejs.org/en/download)
 Make sure you select Linux from the drop down menu.
-
-#### Step 2: Go to the directory in which (.tar.xz file) is downloaded.
+## 2. Go to the directory in which (.tar.xz file) is downloaded.
 It should be the /Download directory
-
-#### Step 3: Update System Repositories by running the following command
+```bash
+cd Download
+```
+Check the file in the folder
+```bash
+ls
+```
+## 3. Update System Repositories by running the following command
 ```bash
 sudo apt update
 ```
-
-#### Step 4: Install the package xz-utils using the following command
+## 4. Install the package xz-utils using the following command
 ```bash
 sudo apt install xz-utils
 ```
-
-#### Step 5: Extract the .tar.xz file using the following command
+## 5. Extract the .tar.xz file using the following command
 In this case the file downloaded is version 22.14.0 of nodejs
 ```bash
 sudo tar -xvf node-v22.14.0-linux-x64.tar.xz
 ```
-
-#### Step 6: Copy extracted files under /usr/ directory using the following command
+## 6. Copy extracted files under /usr/ directory using the following command
 ```bash
 sudo cp -r node-v22.14.0-linux-x64/{bin,include,lib,share} /usr/
 ```
-
-#### Step 7: Check the node version
+## 7. Check the node version
 ```bash
 node --version
 ```
-
-#### Step 7: Check npm version
+## 8. Check npm version
 ```bash
 npm --version
 ```
-
 Result In my case -> v22.14.0
