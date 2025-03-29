@@ -11,7 +11,7 @@
 ### 1. Preparing the VPS Environment
 #### Log in to Your VPS in Terminal 
 ```bash
-ssh root@_vps_ip_address
+ssh root@vps_ip_address
 ```
 #### Update and Upgrade Your System
 ```bash
