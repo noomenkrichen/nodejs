@@ -9,32 +9,28 @@
 - Setting Up SSL Certificates
 
 ### 1. Preparing the VPS Environment
-
-Log in to Your VPS in Terminal 
+#### Log in to Your VPS in Terminal 
 ```bash
 ssh root@_vps_ip_address
 ```
-
-Update and Upgrade Your System
+#### Update and Upgrade Your System
 ```bash
 sudo apt update
 ```
 ```bash
 sudo apt upgrade -y
 ```
-
-Install Node.js and npm (if not pre-installed)
-To get the latest version of Node.js Follow this Guide: [click here](https://nodejs.org/en)
-The following command will install version 22.x of Node.js
+#### Install Node.js and npm (if not pre-installed)
+##### To get the latest version of Node.js Follow this Guide: [click here](https://nodejs.org/en)
+##### The following command will install version 22.x of Node.js
 ```bash
 curl -fsSL https://deb.nodesource.com/setup_22.x | sudo bash -
 ```
 ```bash
 sudo apt-get install -y nodejs
 ```
-
-Install Latest version of Git (if not pre-installed)
-Follow this Guide: [click here](https://git-scm.com/downloads/linux)
+#### Install Latest version of Git (if not pre-installed)
+#### You can follow this Guide from Git website: [click here](https://git-scm.com/downloads/linux)
 ```bash
 add-apt-repository ppa:git-core/ppa
 ```
@@ -44,12 +40,11 @@ sudo apt update
 ```bash
 sudo apt install -y git
 ```
-
 ###  2. Setting Up the MongoDB Database
 If you want to setup MongoDB on VPS Follow this Guide: [click here](https://www.mongodb.com/docs/manual/tutorial/install-mongodb-on-ubuntu/)
 
 ### 3. Deploying the Express and Node.js Backend
-Clone Your Backend Repository
+#### Clone Your Backend Repository
 ```bash
 mkdir /var/www
 ```
@@ -68,25 +63,24 @@ git clone https://github.com/yourusername/server.git
 ```bash
 cd server
 ```
-
-Install Dependencies
+#### Install Dependencies
 ```bash
 npm install
 ```
-Create .env file & configure Environment Variables
+#### Create .env file & configure Environment Variables
 ```bash
 nano .env
 ```
 add environment variables then save and exit (Ctrl + X, then Y and Enter).
 
-Installing pm2 to Start Backend
+#### Installing pm2 to Start Backend
 ```bash
 npm install -g pm2
 ```
 ```bash
 pm2 start server.js --name app_name-api
 ```
-Start app_name-api on startup
+#### Start app_name-api on startup
 ```bash
 pm2 startup
 ```
@@ -94,7 +88,7 @@ pm2 startup
 pm2 save
 ```
 
-Allowing backend port in firewall 
+#### Allowing backend port in firewall 
 ```bash
 sudo ufw status
 ```
@@ -110,32 +104,32 @@ sudo ufw allow 4000
 ```
 
 ### 4. Deploying the React Frontends
-Clone your frontend repository
+#### Clone your frontend repository
 ```bash
 cd ..
 ```
 ```bash
 git clone https://github.com/yourusername/client.git
 ```
-Creating Build of React Applications
+#### Creating Build of React Applications
 ```bash
 cd client
 ```
 ```bash
 npm install
 ```
-If you have ".env" file in your project
+#### If you have ".env" file in your project
 Create .env file and paste the variables
 ```bash
 nano .env
 ```
-Create build of project
+#### Create build of project
 ```bash
 npm run build
 ```
 Repeat for the second or mulitiple React app.
 
-Install Nginx
+#### Install Nginx
 ```bash
 sudo apt install -y nginx
 ```
@@ -147,7 +141,7 @@ sudo ufw status
 sudo ufw allow 'Nginx Full'
 ```
 
-Configure Nginx for React Frontends
+#### Configure Nginx for React Frontends
 ```bash
 nano /etc/nginx/sites-available/yourdomain1.com.conf
 ```
@@ -164,7 +158,7 @@ server {
 ```
 Save and exit (Ctrl + X, then Y and Enter).
 
-Create a similar file for the second or multiple React app.
+#### Create a similar file for the second or multiple React app.
 ```bash
 nano /etc/nginx/sites-available/yourdomain2.com.conf
 ```
@@ -180,7 +174,7 @@ server {
 }
 ```
 
-Create symbolic links to enable the sites.
+#### Create symbolic links to enable the sites.
 ```bash
 ln -s /etc/nginx/sites-available/yourdomain1.com.conf /etc/nginx/sites-enabled/
 ```
@@ -188,7 +182,7 @@ ln -s /etc/nginx/sites-available/yourdomain1.com.conf /etc/nginx/sites-enabled/
 ln -s /etc/nginx/sites-available/yourdomain2.com.conf /etc/nginx/sites-enabled/
 ```
 
-Test the Nginx configuration for syntax errors.
+#### Test the Nginx configuration for syntax errors.
 ```bash
 nginx -t
 ```
@@ -196,8 +190,8 @@ nginx -t
 systemctl restart nginx
 ```
 
-### 5. Configuring Nginx as a Reverse Proxy
-Update Backend Nginx Configuration
+### 5. Configuring Nginx as a Reverse Proxy for the backend
+#### Update Backend Nginx Configuration
 ```bash
 nano /etc/nginx/sites-available/api.yourdomain.com.conf
 ```
@@ -216,12 +210,12 @@ server {
 }
 ```
 
-Create symbolic links to enable the sites.
+#### Create symbolic links to enable the sites.
 ```bash
 ln -s /etc/nginx/sites-available/api.yourdomain.com.conf /etc/nginx/sites-enabled/
 ```
 
-Restart nginx
+#### Restart nginx
 ```bash
 systemctl restart nginx
 ```
@@ -231,15 +225,15 @@ Point all your domain & sub-domain on VPS IP address by adding DNS records in yo
 Now your website will be live on domain name
 
 ### 6. Setting Up SSL Certificates 
-Install Certbot
+#### Install Certbot
 ```bash
 sudo apt install -y certbot python3-certbot-nginx
 ```
-Obtain SSL Certificates
+#### Obtain SSL Certificates
 ```bash
 certbot --nginx -d yourdomain1.com -d www.yourdomain1.com -d yourdomain2.com -d api.yourdomain.com
 ```
-Verify Auto-Renewal
+#### Verify Auto-Renewal
 ```bash
 certbot renew --dry-run
 ```
