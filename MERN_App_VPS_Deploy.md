@@ -1,4 +1,4 @@
-# Deploying MERN Stack Project on Hostinger VPS
+# Deploying MERN Stack Project on VPS
 - Preparing the VPS Environment
 - Setting Up the MongoDB Database
 - Deploying the Express and Node.js Backend
