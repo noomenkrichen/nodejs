@@ -1,4 +1,4 @@
-# Steps to download and install nodejs in ubuntu
+# Method to Install Latest version of NodeJS on Ubuntu Desktop
 How to install latest NodeJS version on Linux Ubuntu Desktop or Server using the .tar.xz downloaded file.
 ## 1. Download latest or recommended node .tar.xz file from [Node JS official website](https://nodejs.org/en/download)
 Make sure you select Linux from the drop down menu.

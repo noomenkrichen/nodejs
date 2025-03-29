@@ -23,9 +23,6 @@ Ensure MongoDB is running and accessible when using these commands.
 
 
 The --jsonArray flag is important if your JSON data is an array; if the data is in a key-value format, you can omit it.
-
-
-Let me know if you need more details or help with a specific setup!
 ## 3. Import JSON data into MongoDB (with password)
 To import a JSON file into a MongoDB database that requires authentication, use the following syntax:
 ```bash

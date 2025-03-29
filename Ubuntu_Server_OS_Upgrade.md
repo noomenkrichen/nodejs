@@ -1,4 +1,5 @@
-## Check current OS version:
+# Upgrade Ubuntu OS Using Terminal
+## 1. Check current OS version:
 ```bash
 cat /etc/os-release
 ````
@@ -18,18 +19,17 @@ or
 ```bash
 uname –a
 ```
-
-## Upgrading Ubuntu OS to Latest Release
-### 1.	Install ubuntu-release-upgrader-core if it is not already installed:
+## 2. Upgrading Ubuntu OS to Latest Release
+### 2.1.	Install ubuntu-release-upgrader-core if it is not already installed:
 ```bash
 sudo apt-get install ubuntu-release-upgrader-core
 ```
-### 2.	Edit /etc/update-manager/release-upgrades and set Prompt=normal (originally it is Prompt=lts)
+### 2.2.	Edit /etc/update-manager/release-upgrades and set Prompt=normal (originally it is Prompt=lts)
 ```bash
 sudo nano /etc/update-manager/release-upgrades
 ```
-### 3.	Launch the upgrade tool:
+### 2.3.	Launch the upgrade tool:
 ```bash
 do-release-upgrade
 ```
-### 4.	Follow the on-screen instructions.
+### 2.4.	Follow the on-screen instructions.
