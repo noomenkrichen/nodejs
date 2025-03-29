@@ -1,5 +1,4 @@
-
-## Deploying MERN Stack Project on Hostinger VPS
+# Deploying MERN Stack Project on Hostinger VPS
 
 - Preparing the VPS Environment
 - Setting Up the MongoDB Database
@@ -8,21 +7,21 @@
 - Configuring Nginx as a Reverse Proxy
 - Setting Up SSL Certificates
 
-### 1. Preparing the VPS Environment
-#### Log in to Your VPS in Terminal 
+## 1. Preparing the VPS Environment
+### 1.1 Log in to Your VPS in Terminal 
 ```bash
 ssh root@vps_ip_address
 ```
-#### Update and Upgrade Your System
+### 1.2 Update and Upgrade Your System
 ```bash
 sudo apt update
 ```
 ```bash
 sudo apt upgrade -y
 ```
-#### Install Node.js and npm (if not pre-installed)
-##### To get the latest version of Node.js Follow this Guide: [click here](https://nodejs.org/en)
-##### The following command will install version 22.x of Node.js
+### 1.3 Install Node.js and npm (if not pre-installed)
+To get the latest version of Node.js Follow this Guide: [click here](https://nodejs.org/en)
+\The following command will install version 22.x of Node.js
 ```bash
 curl -fsSL https://deb.nodesource.com/setup_22.x | sudo bash -
 ```
