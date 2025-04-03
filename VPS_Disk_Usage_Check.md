@@ -50,7 +50,7 @@ du -sh /var/lib/mongodb
 du -sh /var/lib/mysql
 du -sh /var/lib/docker
 ```
-###🛠️ Fix:
+### 🛠️ Fix:
 For MongoDB:
 ```bash
 sudo systemctl stop mongod
